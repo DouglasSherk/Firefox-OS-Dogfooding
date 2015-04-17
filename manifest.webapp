@@ -1,0 +1,17 @@
+{
+  "name": "Foxfooding",
+  "description": "Foxfooding app",
+  "launch_path": "/index.html",
+  "developer": {
+    "name": "The Gaia Team",
+    "url": "https://github.com/fxos/foxfooding"
+  },
+  "permissions": {
+    "themeable":{}
+  },
+  "default_locale": "en-US",
+  "icons": {
+    "128": "/style/icons/foxfooding_128.png"
+  },
+  "orientation": "default"
+}
