@@ -1,30 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
-  <meta charset="utf-8">
-  <meta name="theme-color" content="#eeeeee">
-  <title>Foxfooding app</title>
+---
+title: Foxfooding
+---
+{% include header.html %}
 
-  <link rel="stylesheet" href="css/style.css">
-
-  <link rel="stylesheet" type="text/css" href="bower_components/base/base.css">
-  <link rel="stylesheet" type="text/css" href="bower_components/gaia-theme/gaia-theme.css">
-  <link rel="stylesheet" type="text/css" href="bower_components/gaia-fonts/style.css">
-  <link rel="stylesheet" type="text/css" href="bower_components/gaia-icons/gaia-icons.css">
-
-  <script src="bower_components/gaia-component/gaia-component.js"></script>
-  <script src="bower_components/gaia-header/dist/gaia-header.js"></script>
-  <link rel="localization" href="data/{locale}.properties" />
-  <script type="text/javascript" src="js/libs/l10n.js" defer></script>
-
-  <link rel="stylesheet" type="text/css" href="app://theme.gaiamobile.org/shared/elements/gaia-theme/gaia-theme.css">
-  <meta name="theme-color" content="var(--header-background)">
-
-  <meta name="defaultLanguage" content="en-US">
-</head>
-
-<body id="container" class="theme-settings">
   <gaia-header>
     <h1 class="main-title" data-l10n-id="app_title">Foxfooding</h1>
   </gaia-header>
@@ -32,14 +10,30 @@
   <h2 class="section-label">News</h2>
   <section id="news" class="info-box">
     <div class="info-text">
-      <p>Lorem ipsum</p>
+      <ul>
+      {% for post in site.posts %}
+      {% if post.layout == 'news' %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+      {% endif %}
+      {% endfor %}
+      </ul>
     </div>
   </section>
 
   <h2 class="section-label">Updates</h2>
   <section id="updates" class="info-box">
     <div class="info-text">
-      <p>Lorem ipsum</p>
+      <ul>
+      {% for post in site.posts %}
+      {% if post.layout == 'updates' %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+      {% endif %}
+      {% endfor %}
+      </ul>
     </div>
   </section>
 
@@ -49,5 +43,5 @@
       <p>Lorem ipsum</p>
     </div>
   </section>
-</body>
-</html>
+
+{% include footer.html %}
