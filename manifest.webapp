@@ -11,7 +11,7 @@
   },
   "default_locale": "en-US",
   "icons": {
-    "128": "/style/icons/foxfooding_128.png"
+    "128": "/images/foxfooding_128.png"
   },
   "orientation": "default"
 }
