@@ -1,11 +1,13 @@
 {% include header.html %}
 
-  <gaia-header action="back">
+  <gaia-header id="title" action="back">
     <h1 class="main-title" data-l10n-id="updates_title">Update</h1>
   </gaia-header>
 
+  <article>
   <h2>{{ page.date | date_to_long_string }}</h2>
 
   {{ content }}
+  </article>
 
 {% include footer.html %}
