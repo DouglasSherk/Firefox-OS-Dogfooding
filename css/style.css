@@ -8,7 +8,22 @@ body {
 }
 
 .section-label {
-    
+
+}
+
+article h2 {
+    font-size: larger;
+    font-style: italic;
+    padding: 1em;
+}
+
+article p {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+article {
+    padding: 5px;
 }
 
 .info-box {
@@ -18,7 +33,6 @@ body {
 }
 
 .info-text {
-    margin: 1em;
     font-size: small;
-    font-family: serif;
+    font-family: inherit;
 }

@@ -3,45 +3,41 @@ title: Foxfooding
 ---
 {% include header.html %}
 
-  <gaia-header>
+  <gaia-header id="title">
     <h1 class="main-title" data-l10n-id="app_title">Foxfooding</h1>
   </gaia-header>
 
   <h2 class="section-label">News</h2>
   <section id="news" class="info-box">
-    <div class="info-text">
-      <ul>
+    <gaia-list class="info-text">
       {% for post in site.posts %}
       {% if post.layout == 'news' %}
-      <li>
-        <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-      </li>
+      <div>
+        <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a>
+      </div>
       {% endif %}
       {% endfor %}
-      </ul>
-    </div>
+    </gaia-list>
   </section>
 
   <h2 class="section-label">Updates</h2>
   <section id="updates" class="info-box">
-    <div class="info-text">
-      <ul>
+    <gaia-list class="info-text">
       {% for post in site.posts %}
       {% if post.layout == 'updates' %}
-      <li>
-        <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-      </li>
+      <div>
+        <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a>
+      </div>
       {% endif %}
       {% endfor %}
-      </ul>
-    </div>
+    </gaia-list>
   </section>
 
   <h2 class="section-label">Issues</h2>
   <section id="issues" class="info-box">
-    <div class="info-text">
+    <gaia-list class="info-text">
       <p>Lorem ipsum</p>
-    </div>
+    </gaia-list>
   </section>
 
 {% include footer.html %}
