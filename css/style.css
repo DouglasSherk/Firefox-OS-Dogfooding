@@ -15,10 +15,12 @@ body {
     border: 1px solid black;
     background-color: white;
     margin: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .info-text {
     margin: 1em;
     font-size: small;
-    font-family: serif;
+    font-family: inherit;
 }

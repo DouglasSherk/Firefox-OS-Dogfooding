@@ -9,39 +9,35 @@ title: Foxfooding
 
   <h2 class="section-label">News</h2>
   <section id="news" class="info-box">
-    <div class="info-text">
-      <ul>
+    <gaia-list class="info-text">
       {% for post in site.posts %}
       {% if post.layout == 'news' %}
-      <li>
+      <div>
         <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a>
-      </li>
+      </div>
       {% endif %}
       {% endfor %}
-      </ul>
-    </div>
+    </gaia-list>
   </section>
 
   <h2 class="section-label">Updates</h2>
   <section id="updates" class="info-box">
-    <div class="info-text">
-      <ul>
+    <gaia-list class="info-text">
       {% for post in site.posts %}
       {% if post.layout == 'updates' %}
-      <li>
+      <div>
         <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a>
-      </li>
+      </div>
       {% endif %}
       {% endfor %}
-      </ul>
-    </div>
+    </gaia-list>
   </section>
 
   <h2 class="section-label">Issues</h2>
   <section id="issues" class="info-box">
-    <div class="info-text">
+    <gaia-list class="info-text">
       <p>Lorem ipsum</p>
-    </div>
+    </gaia-list>
   </section>
 
 {% include footer.html %}
