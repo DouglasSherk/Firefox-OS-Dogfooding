@@ -1,7 +1,10 @@
+---
+siteurl: https://fxos.github.io
+---
 {
   "name": "Foxfooding",
   "description": "Foxfooding app",
-  "launch_path": "/index.html",
+  "launch_path": "{{ site.baseurl | prepend: page.siteurl }}",
   "developer": {
     "name": "The Gaia Team",
     "url": "https://github.com/fxos/foxfooding"
@@ -14,4 +17,4 @@
     "128": "/images/foxfooding_128.png"
   },
   "orientation": "default"
-}
+
