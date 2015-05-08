@@ -14,7 +14,7 @@ siteurl: https://fxos.github.io
   },
   "default_locale": "en-US",
   "icons": {
-    "128": "/images/foxfooding_128.png"
+    "128": "{{ site.baseurl }}/images/foxfooding_128.png"
   },
   "orientation": "default"
 }
