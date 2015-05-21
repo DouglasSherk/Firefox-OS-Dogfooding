@@ -11,18 +11,18 @@ var TitleBar = {
 
   init: function() {
     this.view.addEventListener('click', this);
-    this.view.addEventListener('action', this);
   },
 
 
   handleEvent: function tb_handleEvent(evt) {
+    console.log("evt.target", evt.target);
+
     switch (evt.type) {
     case 'click':
       console.log('click');
-      break;
-    case 'action':
-      console.log('action');
-      history.back(-1);
+      if(evt.target.getAttribute('action') === 'back') {
+        history.back(-1);
+      }
       break;
     }
   }
