@@ -3,12 +3,18 @@
 body {
 }
 
+gaia-list > .inner a {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
 .main-title {
     text-align: center;
 }
 
 .section-label {
-
+    margin: 0.7em;
+    font-weight: bold;
 }
 
 article h2 {
@@ -35,4 +41,5 @@ article {
 .info-text {
     font-size: small;
     font-family: inherit;
+    padding: 0.7em;
 }
