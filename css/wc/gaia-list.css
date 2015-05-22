@@ -1,0 +1,182 @@
+
+/** Reset
+     ---------------------------------------------------------*/
+
+label { background: none; }
+
+/** Host
+     ---------------------------------------------------------*/
+
+gaia-list {
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+    font-size: 17px;
+}
+
+/** Children
+     ---------------------------------------------------------*/
+
+gaia-list > .inner > * {
+    position: relative;
+    z-index: 2;
+
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    min-height: 60px;
+    padding: 9px 16px;
+    margin: 0;
+    border: 0;
+    outline: 0;
+
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    background: transparent;
+    align-items: center;
+    list-style-type: none;
+
+    color:
+    var(--text-color);
+}
+
+gaia-list > .inner > a {
+    cursor: pointer;
+}
+
+/** Titles
+     ---------------------------------------------------------*/
+
+gaia-list > .inner h1,
+gaia-list > .inner h2,
+gaia-list > .inner h3,
+gaia-list > .inner h4 {
+    font-weight: 400;
+}
+
+/** Layout Helpers
+     ---------------------------------------------------------*/
+
+/**
+ * [flexbox]
+ *
+ * A helper attribute to allow users to
+ * quickly define content as a flexbox.
+ */
+
+gaia-list > .inner [flexbox] {
+    display: flex;
+}
+
+/**
+ * [flex]
+ *
+ * A helper attribute to allow users to
+ * quickly define area as flexible.
+ */
+
+gaia-list > .inner [flex] {
+    flex: 1;
+}
+
+/** Border
+     ---------------------------------------------------------*/
+
+gaia-list > .inner > *:before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 16px;
+    right: 16px;
+    height: 1px;
+
+    background:
+    var(--border-color,
+        var(--background-plus));
+}
+
+/* Hack: Hide the line before the second element, since the first element is
+ * the <style scoped> element */
+gaia-list > .inner > :first-child:before,
+gaia-list > .inner > style:first-child ~ :nth-child(2):before,
+gaia-list > .inner > gaia-header:first-child ~ :nth-child(2):before,
+gaia-list > .inner > gaia-sub-header:first-child ~ :nth-child(2):before,
+gaia-list > .inner > h1:first-child ~ :nth-child(2):before,
+gaia-list > .inner > h2:first-child ~ :nth-child(2):before,
+gaia-list > .inner > .borderless:before {
+    display: none;
+}
+
+/** Titles
+     ---------------------------------------------------------*/
+
+gaia-list > .inner small,
+gaia-list > .inner p {
+    font-size: 0.7em;
+    line-height: 1.35em;
+}
+
+/** Icon
+     ---------------------------------------------------------*/
+
+gaia-list > .inner i {
+    display: inline-block;
+    width: 40px;
+}
+
+gaia-list > .inner i:before {
+    display: block;
+}
+
+gaia-list > .inner > * > i:last-child {
+    width: auto;
+}
+
+/**
+ * Reverse the icons when the document is RTL mode
+ */
+
+:host-context([dir=rtl]) gaia-list > .inner i:before {
+    transform: scale(-1, 1);
+}
+
+/** Divided
+     ---------------------------------------------------------*/
+
+gaia-list > .inner .divided {
+    -moz-border-start: solid 1px;
+    -moz-padding-start: 14px;
+
+    border-color:
+    var(--border-color,
+        var(--background-plus));
+}
+
+/** Ripple Container
+     ---------------------------------------------------------*/
+
+.ripple-container.ripple-container {
+    box-sizing: content-box;
+    position: absolute;
+    z-index: -1;
+    padding-top: 1px;
+    overflow: hidden;
+}
+
+/** Ripple
+     ---------------------------------------------------------*/
+
+.ripple-container > .ripple {
+    background: var(--border-color);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 2px;
+    margin: -1px;
+    border-radius: 50%;
+    transition-property: transform, opacity;
+    will-change: transform;
+}
