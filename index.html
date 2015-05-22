@@ -13,11 +13,17 @@ title: Foxfooding
   <section id="news" class="info-box">
     <gaia-list class="info-text">
       <div class="inner">
+        {% assign has_items = false %}
         {% for post in site.posts %}
         {% if post.layout == 'news' %}
-          <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a>
+        <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ items }} {{ post.title }}</a>
+        {{ post.date | date_to_long_string }}
+        {% assign has_items = true %}
         {% endif %}
         {% endfor %}
+        {% if has_items == false %}
+        <a>No news.</a>
+        {% endif %}
       </div>
     </gaia-list>
   </section>
@@ -26,11 +32,17 @@ title: Foxfooding
   <section id="updates" class="info-box">
     <gaia-list class="info-text">
       <div class="inner">
-      {% for post in site.posts %}
-      {% if post.layout == 'updates' %}
-      <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a>
-      {% endif %}
-      {% endfor %}
+        {% assign has_items = false %}
+        {% for post in site.posts %}
+        {% if post.layout == 'updates' %}
+        <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a>
+        {{ post.date | date_to_long_string }}
+        {% assign has_items = true %}
+        {% endif %}
+        {% endfor %}
+        {% if has_items == false %}
+        <a>No updates.</a>
+        {% endif %}
       </div>
     </gaia-list>
   </section>
@@ -39,7 +51,17 @@ title: Foxfooding
   <section id="issues" class="info-box">
     <gaia-list class="info-text">
       <div class="inner">
-        <a>Lorem ipsum</a>
+        {% assign has_items = false %}
+        {% for post in site.posts %}
+        {% if post.layout == 'issues' %}
+        <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a>
+        {{ post.date | date_to_long_string }}
+        {% assign has_items = true %}
+        {% endif %}
+        {% endfor %}
+        {% if has_items == false %}
+        <a>No known issues.</a>
+        {% endif %}
       </div>
     </gaia-list>
   </section>
