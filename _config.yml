@@ -1,6 +1,4 @@
-source:     . 
+source:     .
 exclude: [README.md]
 layouts:     ./_layouts
 includes:     ./_includes
-baseurl:      "/foxfooding"
-
