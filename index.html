@@ -1,69 +1,147 @@
 ---
-title: Foxfooding
+title: Firefox OS Foxfooding
 ---
 {% include header.html %}
 
-<gaia-header id="title">
-  <div class="inner">
-    <h1 class="main-title" data-l10n-id="app_title">Foxfooding</h1>
+  <br>
+  <div class="row-fluid">
+    <div id="installBanner" class="col-xs-12 hidden-sm hidden-md hidden-lg hide">
+      <div class="alert alert-info" role="alert">
+        <p>
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          Get the Foxfooding app!
+        </p>
+        <p>
+          <a id="installBtn" class="btn btn-success" href="#">
+            <span class="glyphicon glyphicon-floppy-disk"></span> Install
+          </a>
+        </p>
+      </div>
+    </div>
   </div>
-</gaia-header>
-
-  <h2 class="section-label">News</h2>
-  <section id="news" class="info-box">
-    <gaia-list class="info-text">
-      <div class="inner">
-        {% assign has_items = false %}
-        {% for post in site.posts %}
-        {% if post.layout == 'news' %}
-        <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ items }} {{ post.title }}</a>
-        {{ post.date | date_to_long_string }}
-        {% assign has_items = true %}
-        {% endif %}
-        {% endfor %}
-        {% if has_items == false %}
-        <a>No news.</a>
-        {% endif %}
+  <div class="row-fluid">
+    <div class="col-sm-6 col-md-4 hidden-xs">
+      <h2>&nbsp;</h2>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Get the Foxfooding App!</h3>
+        </div>
+        <div class="panel-body">
+          Did you know that you can get the Foxfooding app on your phone? Just
+          navigate your phone browser to this page.
+        </div>
       </div>
-    </gaia-list>
-  </section>
-
-  <h2 class="section-label">Updates</h2>
-  <section id="updates" class="info-box">
-    <gaia-list class="info-text">
-      <div class="inner">
-        {% assign has_items = false %}
-        {% for post in site.posts %}
-        {% if post.layout == 'updates' %}
-        <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a>
-        {{ post.date | date_to_long_string }}
-        {% assign has_items = true %}
-        {% endif %}
-        {% endfor %}
-        {% if has_items == false %}
-        <a>No updates.</a>
-        {% endif %}
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Follow Us</h3>
+        </div>
+        <div class="panel-body">
+          <a href="https://twitter.com/share" class="twitter-share-button"
+             data-url="https://foxfooding.github.io" data-text="Firefox OS Foxfooding"
+             data-via="foxfooding" data-size="large"
+             data-hashtags="foxfooding">Tweet</a>
+          <script>!function(d,s,id){var
+js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,
+'script', 'twitter-wjs');</script>
+          <p></p>
+          <p>Subscribe to our mailing list!</p>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Email..." disabled>
+            <span class="input-group-btn">
+              <a class="btn btn-primary" type="button" disabled>
+                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Subscribe
+              </a>
+            </span>
+          </div>
+        </div>
       </div>
-    </gaia-list>
-  </section>
-
-  <h2 class="section-label">Issues</h2>
-  <section id="issues" class="info-box">
-    <gaia-list class="info-text">
-      <div class="inner">
-        {% assign has_items = false %}
-        {% for post in site.posts %}
-        {% if post.layout == 'issues' %}
-        <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a>
-        {{ post.date | date_to_long_string }}
-        {% assign has_items = true %}
-        {% endif %}
-        {% endfor %}
-        {% if has_items == false %}
-        <a>No known issues.</a>
-        {% endif %}
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Get A Device!</h3>
+        </div>
+        <div class="panel-body">
+          <p>We’re not ready yet to be giving out devices, but stay tuned for
+          updates on our mailing list and social media.</p>
+          <a class="btn btn-success" disabled>Get a Device</a>
+        </div>
       </div>
-    </gaia-list>
-  </section>
+    </div>
+
+    <div class="col-md-8 col-sm-6 col-xs-12">
+      <h2>Updates</h2>
+      <section class="articles">
+        <table class="table table-hover table-bordered table-striped">
+          {% assign has_items = false %}
+          {% for post in site.posts %}
+          {% if post.type == 'update' %}
+          <tr onclick="window.location.href='{{ post.url | prepend: site.url }}'">
+            <td>
+              <span class="pull-right glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+              <a data-date="{{ post.date }}" href="{{ post.url | prepend: site.url }}">{{ post.title }}</a>
+              <br>
+              <span class="date">{{ post.date | date_to_long_string }}</span>,
+              by {{ post.author }}
+            </td>
+          </tr>
+          {% assign has_items = true %}
+          {% endif %}
+          {% endfor %}
+          {% if has_items == false %}
+          <tr><td>No updates.</td></tr>
+          {% endif %}
+        </table>
+      </section>
+
+      <h2>News</h2>
+      <section class="articles">
+        <table class="table table-hover table-bordered table-striped">
+          {% assign has_items = false %}
+          {% for post in site.posts %}
+          {% if post.type == 'news' %}
+          <tr onclick="window.location.href='{{ post.url | prepend: site.url }}'">
+            <td>
+              <span class="pull-right glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+              <a data-date="{{ post.date }}" href="{{ post.url | prepend: site.url }}">{{ items }} {{ post.title }}</a>
+              <br>
+              <span class="date">{{ post.date | date_to_long_string }}</span>,
+              by {{ post.author }}
+            </td>
+          </tr>
+          {% assign has_items = true %}
+          {% endif %}
+          {% endfor %}
+          {% if has_items == false %}
+          <tr><td><a>No news.</a></td></tr>
+          {% endif %}
+        </table>
+      </section>
+
+      <h2>Issues</h2>
+      <section class="articles">
+        <table class="table table-hover table-bordered table-striped">
+          {% assign has_items = false %}
+          {% for post in site.posts %}
+          {% if post.type == 'issue' %}
+          <tr onclick="window.location.href='{{ post.url | prepend: site.url }}'">
+            <td>
+              <span class="pull-right glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+              <a data-date="{{ post.date }}" href="{{ post.url | prepend: site.url }}">{{ post.title }}</a>
+              <br>
+              <span class="date">{{ post.date | date_to_long_string }}</span>,
+              by {{ post.author }}
+            </td>
+          </tr>
+          {% assign has_items = true %}
+          {% endif %}
+          {% endfor %}
+          {% if has_items == false %}
+          <tr><td>No known issues.</td></tr>
+          {% endif %}
+        </ul>
+      </section>
+    </div>
+  </div>
+  <script src="/js/install.js"></script>
+  <script src="/js/new.js"></script>
 
 {% include footer.html %}

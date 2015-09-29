@@ -1,0 +1,6 @@
+[submodule "dashboard"]
+	path = dashboard
+	url = https://github.com/foxfooding/dashboard.git
+[submodule "triagr"]
+	path = triagr
+	url = https://github.com/foxfooding/triagr.git

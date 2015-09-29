@@ -3,26 +3,87 @@
 <head>
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
   <meta charset="utf-8">
-  <meta name="theme-color" content="#eeeeee">
-  <title>{{ page.title }}</title>
+  <title>{{ page.title | strip_html }}</title>
 
-  <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
+  <link rel="stylesheet" href="/style/index.css">
+  <link rel="stylesheet" href="/style/bootstrap-overrides.css">
 
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/bower_components/base/base.css">
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/bower_components/gaia-theme/gaia-theme.css">
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/bower_components/gaia-fonts/style.css">
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/bower_components/gaia-icons/gaia-icons.css">
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/wc/gaia-header.css">
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/wc/gaia-list.css">
+  <link rel="stylesheet" href="/style/bootstrap.min.css">
+  <link rel="stylesheet" href="/style/bootstrap-theme.min.css">
+  <script src="/js/jquery-2.1.4.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/notifications.js"></script>
 
-  <script src="{{ site.baseurl }}/bower_components/gaia-component/gaia-component.js"></script>
-  <link rel="localization" href="{{ site.baseurl }}/data/{locale}.properties" />
-  <script type="text/javascript" src="{{ site.baseurl }}/js/libs/l10n.js" defer></script>
-  <script type="text/javascript" src="{{ site.baseurl }}/js/foxfooding.js" defer></script>
-
-  <link rel="stylesheet" type="text/css" href="app://theme.gaiamobile.org/shared/elements/gaia-theme/gaia-theme.css">
-  <meta name="theme-color" content="var(--header-background)">
+  <link rel="localization" href="/data/{locale}.properties" />
 
   <meta name="defaultLanguage" content="en-US">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/img/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/img/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/img/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/img/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/img/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/img/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/img/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/img/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+  <link rel="manifest" href="/img/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/img/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
 </head>
-<body id="container" class="theme-productivity">
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Foxfooding</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <!--<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>-->
+          <li class="visible-xs"><a href="settings.html">Settings</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="https://wiki.mozilla.org/FirefoxOS">All About Firefox OS</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="https://developer.mozilla.org/en-US/Firefox_OS">Developing Firefox OS</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/Firefox_OS/Add-ons">Add-on Development</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Get Involved <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="device.html">Get a Device</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a target="_blank" href="dashboard">Feature and Bug Dashboard</a></li>
+              <li><a target="_blank" href="triagr">Triagr</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="subscribe.html">Mailing List</a></li>
+              <li><a target="_blank" href="https://twitter.com/Foxfooding">Twitter</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <a href="https://twitter.com/foxfooding" class="twitter-follow-button"
+            data-show-count="true" data-size="large">Follow @foxfooding</a>
+          <script>!function(d,s,id){var
+  js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,
+  'script', 'twitter-wjs');</script>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">

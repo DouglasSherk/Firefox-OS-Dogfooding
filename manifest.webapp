@@ -1,20 +1,27 @@
 ---
-siteurl: https://fxos.github.io
+siteurl: https://foxfooding.github.io
 ---
 {
   "name": "Foxfooding",
-  "description": "Foxfooding app",
-  "launch_path": "{{ site.baseurl | prepend: page.siteurl }}",
+  "description": "News and info about the Firefox OS Foxfooding program",
+  "launch_path": "{{ prepend: page.siteurl }}",
   "developer": {
     "name": "The Gaia Team",
-    "url": "https://github.com/fxos/foxfooding"
+    "url": "https://github.com/foxfooding/foxfooding.github.io"
   },
   "permissions": {
-    "themeable":{}
+    "push": {
+      "description": "For sending updates to users about new posts"
+    }
   },
+  "messages": [
+    { "push": "/index.html" },
+    { "push-register": "/index.html" }
+  ],
   "default_locale": "en-US",
   "icons": {
-    "128": "{{ site.baseurl }}/images/foxfooding_128.png"
+    "128": "/img/foxfooding_128.png",
+    "256": "/img/foxfooding_256.png"
   },
   "orientation": "default"
 }

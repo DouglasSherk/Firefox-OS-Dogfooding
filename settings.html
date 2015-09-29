@@ -1,0 +1,21 @@
+---
+title: Settings
+---
+{% include header.html %}
+
+  <h2>Settings</h2>
+  <dl class="dl-horizontal">
+    <dt>Notifications</dt>
+    <dd><input name="notifications" type="checkbox"></input></dd>
+    <div id="notificationSubtypes">
+      <dt>Updates</dt>
+      <dd><input name="updates" type="checkbox"></input></dd>
+      <dt>News</dt>
+      <dd><input name="news" type="checkbox"></input></dd>
+      <dt>Issues</dt>
+      <dd><input name="issues" type="checkbox"></input></dd>
+    </div>
+  </dl>
+  <script src="js/settings.js"></script>
+
+{% include footer.html %}

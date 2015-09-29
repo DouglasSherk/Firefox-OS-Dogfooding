@@ -1,0 +1,30 @@
+article {
+  max-width: 720px;
+  margin: 30px auto;
+}
+
+.articles a {
+  font-weight: bold;
+}
+
+.articles tr {
+  position: relative;
+  cursor: pointer;
+}
+
+.articles .glyphicon-menu-right {
+  margin-top: 10px;
+  color: #999;
+}
+
+.date {
+  font-style: italic;
+}
+
+body .navbar-right {
+  margin-top: 10px;
+}
+
+body .alert {
+  margin-bottom: 0;
+}
