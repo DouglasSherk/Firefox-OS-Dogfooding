@@ -28,3 +28,11 @@ body .navbar-right {
 body .alert {
   margin-bottom: 0;
 }
+
+.settings-container {
+  margin-top: 3em;
+}
+
+.settings-container .row {
+  margin-bottom: 1em;
+}
