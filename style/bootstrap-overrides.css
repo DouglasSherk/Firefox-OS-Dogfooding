@@ -1,3 +1,7 @@
 body .navbar {
   margin-bottom: 0;
 }
+
+body .table td {
+  vertical-align: middle !important;
+}

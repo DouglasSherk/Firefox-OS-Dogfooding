@@ -28,3 +28,7 @@ body .navbar-right {
 body .alert {
   margin-bottom: 0;
 }
+
+.btn.toggle[disabled] {
+  opacity: 40%;
+}
