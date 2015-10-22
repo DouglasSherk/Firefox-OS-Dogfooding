@@ -12,6 +12,9 @@ siteurl: https://foxfooding.github.io
   "permissions": {
     "push": {
       "description": "For sending updates to users about new posts"
+    },
+    "desktop-notification": {
+      "description": "To send notifications to the user about new posts"
     }
   },
   "messages": [

@@ -1,0 +1,14 @@
+---
+---
+[
+  {% for post in site.posts %}
+  {
+    "title": "{{ post.title | strip_html }}",
+    "author": "{{ post.author }}",
+    "date": "{{ post.date }}",
+    "url": "{{ post.url }}",
+    "type": "{{ post.type }}",
+    "icon": "{{ post.icon }}"
+  }{% if post != site.posts.last %},{% endif %}
+  {% endfor %}
+]
