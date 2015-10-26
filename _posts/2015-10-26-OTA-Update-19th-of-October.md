@@ -3,7 +3,7 @@ layout: post
 title: OTA Update 19th of October
 type: update
 author: Irina Sandu (:Irina)
-
+---
 
 Hello,
 
@@ -29,7 +29,7 @@ List is also available on the wiki: https://wiki.mozilla.org/B2G/QA/Spark/Uservi
 
 User visible bugs:
 
-Accessiblity
+Accessibility
 ---
 *    [**1209718** - New Utility Tray is not screen reader friendly](https://bugzilla.mozilla.org/show_bug.cgi?id=1209718)
 
