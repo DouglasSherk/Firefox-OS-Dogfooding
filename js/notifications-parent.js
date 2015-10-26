@@ -1,3 +1,5 @@
 window.addEventListener('message', function(e) {
-  window.location.href = e.data;
+  if (typeof e.data == 'string') {
+    window.location.href = e.data;
+  }
 });
